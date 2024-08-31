@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thumbnails Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search thumbnails..." onkeyup="searchImages()">
+    </div>
+    
+    <!-- Sort Buttons -->
+    <div class="sort-container">
+        <button onclick="sortByDownloads()">Most Downloaded</button>
+        <button onclick="sortByRandom()">Random</button>
+    </div>
+    
+    <div class="gallery" id="imageGallery">
+        <div class="image-item" data-tags="red, 100subs, subscribers, youtube, montage" data-id="100SubsMontage">
+            <img src="images/100SubsMontage.png" alt="100SubsMontage">
+            <a class="download-button" href="#" onclick="incrementDownload('100SubsMontage')">Download</a>
+        </div>
+        <div class="image-item" data-tags="red, 100subs, subscribers, youtube, montage" data-id="100SubsMontage2">
+            <img src="images/100SubsMontage2.png" alt="100SubsMontage2">
+            <a class="download-button" href="#" onclick="incrementDownload('100SubsMontage2')">Download</a>
+        </div>
+        <div class="image-item" data-tags="gold, Legend, Biggest Legends, montage, first, leader" data-id="BiggestLegends">
+            <img src="images/BiggestLegends.png" alt="BiggestLegends">
+            <a class="download-button" href="#" onclick="incrementDownload('BiggestLegends')">Download</a>
+        </div>
+        <div class="image-item" data-tags="red, gold, 100 hours, montage, mars map" data-id="100Hours">
+            <img src="images/100Hours.png" alt="100Hours">
+            <a class="download-button" href="#" onclick="incrementDownload('100Hours')">Download</a>
+        </div>
+        <div class="image-item" data-tags="blue, Blade, aura, montage" data-id="BladeMontage">
+            <img src="images/BladeMontage.png" alt="BladeMontage">
+            <a class="download-button" href="#" onclick="incrementDownload('BladeMontage')">Download</a>
+        </div>
+        <div class="image-item" data-tags="blue, aura, montage, tank" data-id="blueaura">
+            <img src="images/blueaura.png" alt="blueaura">
+            <a class="download-button" href="#" onclick="incrementDownload('blueaura')">Download</a>
+        </div>
+        <div class="image-item" data-tags="blue, grey, white, soft, glass, montage, tank, gradient" data-id="blueglass">
+            <img src="images/blueglass.png" alt="blueglass">
+            <a class="download-button" href="#" onclick="incrementDownload('blueglass')">Download</a>
+        </div>
+        <div class="image-item" data-tags="blue, purple, snow, montage, tank" data-id="bluemontage">
+            <img src="images/bluemontage.png" alt="bluemontage">
+            <a class="download-button" href="#" onclick="incrementDownload('bluemontage')">Download</a>
+        </div>
+        <div class="image-item" data-tags="blue, cyan, portal, aura, montage, tank" data-id="blueportalaura">
+            <img src="images/blueportalaura.png" alt="blueportalaura">
+            <a class="download-button" href="#" onclick="incrementDownload('blueportalaura')">Download</a>
+        </div>
+        <div class="image-item" data-tags="red, yellow, 100 hours, montage, cheese map" data-id="100Hours2">
+            <img src="images/100Hours2.png" alt="100Hours2">
+            <a class="download-button" href="#" onclick="incrementDownload('100Hours2')">Download</a>
+        </div>
+        <div class="image-item" data-tags="green, boat swimming on gems, boat on gems, gems pile, pile, boat" data-id="boatswimmingongems">
+            <img src="images/boatswimmingongems.png" alt="boatswimmingongems">
+            <a class="download-button" href="#" onclick="incrementDownload('boatswimmingongems')">Download</a>
+        </div>
+        <div class="image-item" data-tags="Blue, Controller progression, Controller, Montage, progression" data-id="Controllerprogression">
+            <img src="images/Controllerprogression.png" alt="Controllerprogression">
+            <a class="download-button" href="#" onclick="incrementDownload('Controllerprogression')">Download</a>
+        </div>
+        <div class="image-item" data-tags="grey, crate, tank, opening crate" data-id="crate">
+            <img src="images/crate.png" alt="crate">
+            <a class="download-button" href="#" onclick="incrementDownload('crate')">Download</a>
+        </div>
+        <div class="image-item" data-tags="grey, gold, crates, tanks, opening crates, opening elite crates" data-id="crates">
+            <img src="images/crates.png" alt="crates">
+            <a class="download-button" href="#" onclick="incrementDownload('crates')">Download</a>
+        </div>
+        <div class="image-item" data-tags="grey, crates, tank, opening crates, moai" data-id="cratestanks">
+            <img src="images/cratestanks.png" alt="cratestanks">
+            <a class="download-button" href="#" onclick="incrementDownload('cratestanks')">Download</a>
+        </div>
+        <div class="image-item" data-tags="gold, blue, crown" data-id="crown">
+            <img src="images/crown.png" alt="crown">
+            <a class="download-button" href="#" onclick="incrementDownload('crown')">Download</a>
+        </div>
+        <div class="image-item" data-tags="blue, gold, tank, crowned tank, crown, montage" data-id="crownedtank">
+            <img src="images/crownedtank.png" alt="crownedtank">
+            <a class="download-button" href="#" onclick="incrementDownload('crownedtank')">Download</a>
+        </div>
+        <div class="image-item" data-tags="brown, wood, beta, crowned tank, wooden tank, crown, montage" data-id="crownedwoodentank">
+            <img src="images/crownedwoodentank.png" alt="crownedwoodentank">
+            <a class="download-button" href="#" onclick="incrementDownload('crownedwoodentank')">Download</a>
+        </div>
+        <div class="image-item" data-tags="blue, cyan, aura, portal, montage thumbnail, cool, gradient" data-id="cyanaura">
+            <img src="images/cyanaura.png" alt="cyanaura">
+            <a class="download-button" href="#" onclick="incrementDownload('cyanaura')">Download</a>
+        </div>
+        <div class="image-item" data-tags="black, edits, montages, cool, aura" data-id="Edit1">
+            <img src="images/Edit1.png" alt="Edit1">
+            <a class="download-button" href="#" onclick="incrementDownload('Edit1')">Download</a>
+        </div>
+    </div>
+
+    <!-- Footer Section with Contact Information -->
+    <div class="footer">
+        <p>Not seeing what you want? Contact me on discord! <a href="https://discord.gg/SPTAs6mTGe">https://discord.gg/SPTAs6mTGe</a></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
