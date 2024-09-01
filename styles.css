@@ -18,6 +18,12 @@ body {
     }
 }
 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
 .search-container {
     padding: 20px;
     text-align: center;
@@ -82,27 +88,32 @@ body {
     transform: scale(1.05);
 }
 
-.download-info {
+.download-counter {
     position: absolute;
     top: 10px;
     left: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
     color: white;
-    background-color: rgba(0, 0, 0, 0.5);
     padding: 5px 10px;
     border-radius: 5px;
     font-size: 14px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
 }
 
 .download-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
     background-color: #007BFF;
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
     text-decoration: none;
     font-size: 14px;
+    display: none;
+}
+
+.image-item:hover .download-button {
+    display: inline-block;
 }
 
 .footer {
