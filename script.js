@@ -1,54 +1,50 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const imageItems = document.querySelectorAll(".image-item");
+document.addEventListener('DOMContentLoaded', function () {
+    const imageItems = document.querySelectorAll('.image-item');
 
     imageItems.forEach(item => {
-        const imageId = item.getAttribute("data-id");
-        const downloadButton = item.querySelector(".download-button");
+        const imageId = item.getAttribute('data-id');
+        const downloadButton = item.querySelector('.download-button');
+        const downloadCountElement = document.createElement('span');
+        downloadCountElement.classList.add('download-count');
+        downloadCountElement.innerText = '0 downloads'; // Default value
 
-        // Set default download count to 0
-        let downloadCountElement = document.createElement("p");
-        downloadCountElement.className = "download-count";
-        downloadCountElement.innerText = "Downloads: 0";
-        item.appendChild(downloadCountElement);
+        // Append the download count element after the download button
+        downloadButton.after(downloadCountElement);
 
-        // Fetch the download count
-        fetch(`/netlify/functions/getDownloadCount?imageId=${imageId}`)
+        // Fetch download count
+        fetch(`/.netlify/functions/getDownloadCount?imageId=${imageId}`)
             .then(response => {
                 if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
+                    // Handle non-200 responses
+                    throw new Error('Failed to fetch download count');
                 }
                 return response.json();
             })
             .then(data => {
-                if (data && data.downloadCount !== undefined) {
-                    downloadCountElement.innerText = `Downloads: ${data.downloadCount}`;
-                } else {
-                    console.error(`Download count data missing for ${imageId}`);
-                }
+                downloadCountElement.innerText = `${data.count} downloads`;
             })
             .catch(error => {
-                console.error(`Error fetching download count for ${imageId}:`, error);
+                console.error('Error fetching download count:', error);
+                // Default to 0 downloads on error
+                downloadCountElement.innerText = '0 downloads';
             });
-
-        // Handle the download button click
-        downloadButton.addEventListener("click", function (event) {
-            event.preventDefault(); // Prevent default link action
-
-            fetch(`/netlify/functions/incrementDownload?imageId=${imageId}`, {
-                method: "POST"
-            })
-                .then(response => {
-                    if (response.ok) {
-                        // Increment the count in the UI
-                        let currentCount = parseInt(downloadCountElement.innerText.replace("Downloads: ", ""));
-                        downloadCountElement.innerText = `Downloads: ${currentCount + 1}`;
-                    } else {
-                        throw new Error(`HTTP error! Status: ${response.status}`);
-                    }
-                })
-                .catch(error => {
-                    console.error(`Error incrementing download count for ${imageId}:`, error);
-                });
-        });
     });
 });
+
+// Increment download count
+function incrementDownload(imageId) {
+    fetch(`/.netlify/functions/incrementDownload?imageId=${imageId}`, { method: 'POST' })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to increment download count');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Download incremented:', data);
+            // Optionally update the UI here
+        })
+        .catch(error => {
+            console.error('Error incrementing download count:', error);
+        });
+}
