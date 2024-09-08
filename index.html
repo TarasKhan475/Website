@@ -3,99 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thumbnails Gallery</title>
+    <title>About School Cheats</title>
     <!-- Link to Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
 
     <!-- Favicon Links -->
     <link rel="apple-touch-icon" sizes="180x180" href="ui/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="ui/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="ui/favicons/favicon-16x16.png">
     <link rel="manifest" href="ui/favicons/site.webmanifest">
+
+    <!-- Link to External CSS -->
+    <link rel="stylesheet" href="Index.css">
 </head>
 <body>
-    <div class="search-container">
-        <input type="text" id="searchInput" placeholder="Search thumbnails..." onkeyup="searchImages()">
-    </div>
-    
-    <!-- Sort Buttons -->
-    <div class="sort-container">
-        <button onclick="sortByRandom()">Random</button>
-    </div>
-    
-    <div class="gallery" id="imageGallery">
-        <div class="image-item" data-tags="blue, versus, 1v1, red vs blue, fight" data-id="100SubsMontage">
-            <img src="images/versusthumbnail11.png" alt="versusthumbnail11">
-            <a class="download-button" href="images/versusthumbnail11.png" download>Download</a>
-        </div>
-        <div class="image-item" data-tags="Gold, yellow, crowned, tank, first, montage" data-id="100SubsMontage2">
-            <img src="images/GoldCrownedTank.png" alt="GoldCrownedTank">
-            <a class="download-button" href="images/GoldCrownedTank.png" download>Download</a>
-        </div>
-        <div class="image-item" data-tags="Royalty, montage, music, orange, gold, leader" data-id="BiggestLegends">
-            <img src="images/Royalty.png" alt="Royalty">
-            <a class="download-button" href="images/Royalty.png" download>Download</a>
-        </div>
-        <div class="image-item" data-tags="Gold, coins, gems, turorial, tips, guide, montage" data-id="BladeMontage">
-            <img src="images/HowProsDoIT.png" alt="HowProsDoIT">
-            <a class="download-button" href="images/HowProsDoIT.png" download>Download</a>
-        </div>
-        <div class="image-item" data-tags="red, Weapons, strategy, turorial, tips, guide" data-id="blueaura">
-            <img src="images/WeaponStrategy.png" alt="WeaponStrategy">
-            <a class="download-button" href="images/WeaponStrategy.png" download>Download</a>
-        </div>
-        <div class="image-item" data-tags="Tetris, colorful, montage, edit, music, blade" data-id="blueglass">
-            <img src="images/Tetris.png" alt="Tetris">
-            <a class="download-button" href="images/Tetris.png" download>Download</a>
-        </div>
-        <div class="image-item" data-tags="red, New, update, New Season, season, christmas, winter" data-id="bluemontage">
-            <img src="images/NewSeason.png" alt="NewSeason">
-            <a class="download-button" href="images/NewSeason.png" download>Download</a>
-        </div>
-        <div class="image-item" data-tags="blue, blade, montage, aura, tank" data-id="blueportalaura">
-            <img src="images/BladeMontage.png" alt="BladeMontage">
-            <a class="download-button" href="images/BladeMontage.png" download>Download</a>
-        </div>
-        <div class="image-item" data-tags="Red, Montage, Tanks, leaders, versus" data-id="100SubsMontage">
-            <img src="images/RedMontage.png" alt="RedMontage">
-            <a class="download-button" href="images/RedMontage.png" download>Download</a>
-        </div>
-        <div class="image-item" data-tags="Blue, In the sky, music, tank, aura, montage" data-id="100SubsMontage2">
-            <img src="images/In The Sky.png" alt="In The Sky">
-            <a class="download-button" href="images/In The Sky.png" download>Download</a>
-        </div>
-        <div class="image-item" data-tags="Blue, green, brown, Logo, Montage, edit" data-id="BiggestLegends">
-            <img src="images/RBRMontages.png" alt="RBRMontages">
-            <a class="download-button" href="images/RBRMontages.png" download>Download</a>
-        </div>
-        <div class="image-item" data-tags="Red, default, tank, music, aura, Sea of problems, Seaofproblems, montage" data-id="BladeMontage">
-            <img src="images/Seaofproblems.png" alt="Seaofproblems">
-            <a class="download-button" href="images/Seaofproblems.png" download>Download</a>
-        </div>
-        <div class="image-item" data-tags="colorful, versus, gold, black, dozer, tank, 1v1" data-id="blueaura">
-            <img src="images/versusthumbnail12.png" alt="versusthumbnail12">
-            <a class="download-button" href="images/versusthumbnail12.png" download>Download</a>
-        </div>
-        <div class="image-item" data-tags="black, Edit, first, montage, edit, music" data-id="blueglass">
-            <img src="images/Edit1.png" alt="Edit1">
-            <a class="download-button" href="images/Edit1.png" download>Download</a>
-        </div>
-        <div class="image-item" data-tags="blue, second, montage, aura, edit, New, tank" data-id="bluemontage">
-            <img src="images/SecondVideo.png" alt="SecondVideo">
-            <a class="download-button" href="images/SecondVideo.png" download>Download</a>
-        </div>
-        <div class="image-item" data-tags="red, first, montage, aura, edit, New, tank" data-id="blueportalaura">
-            <img src="images/First Video.png" alt="First Video">
-            <a class="download-button" href="images/First Video.png" download>Download</a>
-        </div>
-    </div>
+    <div class="content">
+        <h1>About WinterpixelCheats</h1>
+        <p>I wanted to make a website to help all players who play any of the winterpixel games with tools that can save them time!</p>
+        
+        <h2 class="section-title">Purpose</h2>
+        <p>My primary purpose in making this website is to help others by proivding an all in one website with all the tools available! Yes there is still a lot of work in progress!</p>
+        
+        <h1>Tools!</h1>
 
-    <!-- Footer Section with Contact Information -->
-    <div class="footer">
-        <p>Not seeing what you want? Contact me on discord! <a href="https://discord.gg/SPTAs6mTGe">https://discord.gg/SPTAs6mTGe</a></p>
+        <!-- Button Container -->
+        <div class="button-container">
+            <!-- First Button -->
+            <a class="image-button" href="ThumbnailGallery.html">
+                <img src="ui/thumbnails/ThumbnailGallery.png" alt="ThumbnailGallery Thumbnail">
+            </a>
+            <!-- Second Button -->
+            <a class="image-button" href="AutomaticCoinRedeemer.html">
+                <img src="ui/thumbnails/UnderConstruction.png" alt="UnderConstruction">
+            </a>
+            <!-- Third Button -->
+            <a class="image-button" href="Accept all friends.html">
+                <img src="ui/thumbnails/UnderConstruction.png" alt="UnderConstruction">
+            </a>
+        </div>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
