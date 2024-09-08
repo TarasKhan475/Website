@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Baloo 2', cursive; /* Updated to use Baloo font */
     margin: 0;
     padding: 0;
     background-image: url('ui/background_image_light_theme.png');
@@ -30,6 +30,7 @@ body {
     font-size: 16px;
     border-radius: 25px; /* Capsule shape */
     border: 2px solid #ddd;
+    font-family: 'Baloo 2', cursive; /* Ensure input text uses Baloo font */
 }
 
 .sort-container {
@@ -47,6 +48,11 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    font-family: 'Baloo 2', cursive;
+}
+
+.sort-container button:first-child { /* The Random button */
+    font-weight: 700; /* Bold variant */
 }
 
 .sort-container button:hover {
@@ -93,6 +99,7 @@ body {
     text-decoration: none;
     font-size: 14px;
     display: none;
+    font-family: 'Baloo 2', cursive; /* Download button text */
 }
 
 .image-item:hover .download-button {
@@ -103,4 +110,5 @@ body {
     text-align: center;
     padding: 20px;
     background-color: #f4f4f4;
+    font-family: 'Baloo 2', cursive;
 }
