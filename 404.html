@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found</title>
+    <!-- Link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon Links -->
+    <link rel="apple-touch-icon" sizes="180x180" href="ui/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="ui/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="ui/favicons/favicon-16x16.png">
+    <link rel="manifest" href="ui/favicons/site.webmanifest">
+
+    <!-- Custom Styles -->
+
+    <style>
+        body {
+            font-family: 'Baloo 2', cursive;
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+            background-image: url('ui/background_image_light_theme.png');
+            background-repeat: repeat;
+            background-size: auto;
+            animation: moveBackground 10s linear infinite;
+            text-align: center; /* Center all text and images */
+        }
+
+        /* Animation to move the background diagonally */
+        @keyframes moveBackground {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 98px -100px;
+            }
+        }
+
+        .content {
+            padding: 50px;
+        }
+
+        .content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .content p {
+            font-size: 24px;
+            color: #ffffff;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-bottom: 0px;
+        }
+
+        .image-container img {
+            max-width: 300px; /* Set a maximum width */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        .home-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 12px 24px;
+            font-size: 18px;
+            color: #202020;
+            background-color: #ffffff;
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .home-button:hover {
+            background-color: #0077ff;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <!-- Centered Image -->
+        <div class="image-container">
+            <img src="ui/Worker_Tank.png" alt="Worker Tank">
+        </div>
+
+        <h1>404 - Page Not Found</h1>
+        <p>Oops! The page you are looking for does not exist.</p>
+        <a href="index.html" class="home-button">Go Back to Home</a>
+    </div>
+</body>
+</html>
