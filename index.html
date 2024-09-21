@@ -64,6 +64,25 @@
             font-size: 20px;
             margin: 10px 0;
         }
+
+        /* Custom styles for the button */
+        .sites-link {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #ffffff; /* White background color */
+            color: #333; /* Dark text color for contrast */
+            text-decoration: none; /* Remove underline */
+            border-radius: 5px; /* Rounded corners */
+            font-weight: bold;
+            font-size: 16px;
+            transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+        }
+
+        .sites-link:hover {
+            background-color: #f0f0f0; /* Light grey background on hover */
+            color: #000; /* Darker text color on hover */
+        }
     </style>
 </head>
 
@@ -106,6 +125,9 @@
             <a class="image-button" href="ThumbnailGallery.html">
                 <img src="ui/thumbnails/ThumbnailGallery.png" alt="ThumbnailGallery Thumbnail">
             </a>
+            <a class="image-button" href="CrateOpening.html">
+                <img src="ui/thumbnails/RBRCrateOpener.png" alt="Rocket Bot Royale Crates Opener">
+            </a>
             <a class="image-button" href="RBR User Stats.html">
                 <img src="ui/thumbnails/RBR User Stats UnderConstruction.png" alt="UnderConstruction">
             </a>
@@ -119,8 +141,8 @@
                 <img src="ui/thumbnails/UnderConstruction.png" alt="UnderConstruction">
             </a>
         </div>
+        <p><a href="OtherSites.html" target="_blank" rel="noopener noreferrer" class="sites-link">Other WinterPixel related websites!</a></p>
     </div>
-
     <script>
         // Check if the notification has already been shown
         if (!localStorage.getItem('notificationShown')) {
@@ -147,6 +169,7 @@
             <li><a href="PrivacyPolicy.html">Privacy Policy</a></li>
             <li><a href="About.html">About Us</a></li>
             <li><a href="Contact.html">Contact Us</a></li>
+            <li><a href="OtherSites.html">Other Sites</a></li>
         </ul>
     </div>
     <div class="copyright">

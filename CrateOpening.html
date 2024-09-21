@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WinterpixelCheats</title>
+    <!-- Link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon Links -->
+    <link rel="apple-touch-icon" sizes="180x180" href="ui/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="ui/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="ui/favicons/favicon-16x16.png">
+    <link rel="manifest" href="ui/favicons/site.webmanifest">
+
+    <!-- Link to External CSS -->
+    <link rel="stylesheet" href="Main.css">
+    
+    <!-- Inline CSS for Scrolling Background -->
+    <style>
+        body {
+            background-image: url('ui/background_image_light_theme.png');
+            background-repeat: repeat;
+            animation: scrollBackground 10s linear infinite;
+        }
+
+        @keyframes scrollBackground {
+            from { background-position: 0 0; }
+            to { background-position: 100px -100px; }
+        }
+
+        /* Header styling */
+        header.main-header {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 6px solid #c0c0c0;
+        }
+
+        .logo img {
+            height: 50px; /* Adjust logo size */
+            width: auto;
+            filter: brightness(95%);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Style for the content box */
+        .content {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border: 6px solid #222;
+            outline: 6px solid #fff;
+            backdrop-filter: blur(10px);
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+            width: calc(100% - 20px); /* Adjust width to fit inside content box */
+        }
+
+        button {
+            background-color: #00a2ff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: auto;
+        }
+
+        button:hover {
+            background-color: #0078bd;
+        }
+
+        .results {
+            margin-top: 20px;
+            text-align: left;
+            color: #fff;
+        }
+
+        .results p {
+            background-color: #f1f1f1;
+            padding: 10px;
+            border-radius: 5px;
+            color: #333;
+        }
+
+        .loading {
+            color: yellow;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main header with logo and navigation -->
+    <header class="main-header">
+        <div class="logo">
+            <a href="Index.html"><img src="ui/Buttonlogo.png" alt="WinterpixelCheats"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Services.html">Services</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main content with scrolling background -->
+    <div class="content">
+        <h2>Open basic Rocket Bot Royale Crates</h2>
+        <p>Use: There is some use to this, for example if you have quite a bit of crates to open and enough money, this code is perfect to quickly open a lot of crates at once!</p>
+
+        <form id="crateForm">
+            <input type="email" id="email" placeholder="Email" required><br>
+            <input type="password" id="password" placeholder="Password" required><br>
+            <input type="number" id="times" placeholder="Number of crates to open" required min="1"><br>
+            <button type="submit">Open Crates</button>
+        </form>
+
+        <div class="results" id="results"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <ul>
+                <li><a href="PrivacyPolicy.html">Privacy Policy</a></li>
+                <li><a href="About.html">About Us</a></li>
+                <li><a href="Contact.html">Contact Us</a></li>
+                <li><a href="OtherSites.html">Other Sites</a></li>
+            </ul>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 WinterpixelCheats.com All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('crateForm').addEventListener('submit', async function (e) {
+            e.preventDefault(); // Prevent form submission
+
+            // Get form values
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const times = document.getElementById('times').value;
+            const coinsToSpend = times * 1000; // Calculate coins
+
+            // Confirm the crate opening and coins spent
+            const confirmation = confirm(`Are you sure you want to spend ${coinsToSpend} coins on ${times} basic crates?`);
+            if (!confirmation) {
+                return; // Exit if user cancels
+            }
+
+            // Clear previous results and show loading message
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '<p class="loading">Processing... Please wait.</p>';
+
+            // Send the POST request to Netlify function
+            try {
+                const response = await fetch('/.netlify/functions/openCrates', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        password: password,
+                        times: times
+                    })
+                });
+
+                const data = await response.json();
+
+                // Remove loading message
+                resultsDiv.innerHTML = '';
+
+                if (response.ok) {
+                    // Show the summary message
+                    const message = document.createElement('p');
+                    message.textContent = data.message;
+                    resultsDiv.appendChild(message);
+
+                    // Show the results (each API ping result)
+                    data.results.forEach(result => {
+                        const resultElement = document.createElement('p');
+                        resultElement.textContent = result;
+                        resultsDiv.appendChild(resultElement);
+                    });
+                } else {
+                    // Show error message if the request failed
+                    const error = document.createElement('p');
+                    error.textContent = `Error: ${data.error}`;
+                    error.style.color = 'red';
+                    resultsDiv.appendChild(error);
+                }
+            } catch (error) {
+                // Handle any other errors
+                resultsDiv.innerHTML = '';
+                const errorMessage = document.createElement('p');
+                errorMessage.textContent = `Error: ${error.message}`;
+                errorMessage.style.color = 'red';
+                resultsDiv.appendChild(errorMessage);
+            }
+        });
+    </script>
+
+</body>
+</html>
