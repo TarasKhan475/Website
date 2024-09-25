@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tank Randomizer</title>
+    <link rel="stylesheet" href="Main.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="app">
+        <h1>Tank Randomizer</h1>
+        <p>Enter your email and password to randomize your tank:</p>
+        
+        <!-- Form for input -->
+        <form id="tankForm">
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+            
+            <button type="submit">Randomize Tank</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Tank Randomizer. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Define the sanitizeInput function here
+        function sanitizeInput(input) {
+            const div = document.createElement('div');
+            div.innerText = input;  // This escapes any HTML or scripts
+            return div.innerHTML.trim();
+        }
+
+        document.getElementById("tankForm").addEventListener("submit", async function(event) {
+            event.preventDefault();  // Prevent form from submitting normally
+
+            // Sanitize user input
+            let email = sanitizeInput(document.getElementById("email").value);
+            let password = sanitizeInput(document.getElementById("password").value);
+
+            try {
+                // Send the HTTP POST request to the backend (replace with your backend function URL)
+                const response = await fetch("/.netlify/functions/randomizetanks", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        password: password
+                    })
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    // Show result if successful
+                    document.getElementById('result').innerText = `Your tank has been randomized to: ${result.tank}`;
+                } else {
+                    // Display error details if there's an issue
+                    document.getElementById('result').innerHTML = `
+                        <p>Error: ${result.error}</p>
+                        <p>Details: ${result.details}</p>
+                        <pre>${result.stack}</pre>
+                    `;
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                document.getElementById("result").innerText = "An unexpected error occurred.";
+            }
+        });
+    </script>
+</body>
+</html>
