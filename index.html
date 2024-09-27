@@ -3,25 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WinterpixelCheats</title>
-
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="WinterpixelCheats provides cheats for games like Rocket Bot Royale, Goober Dash, Moonrock Miners, and more!">
-    <meta name="keywords" content="Winterpixel Games, Rocket Bot Royale, Goober Dash, Moonrock Miners, Goober Shot, Goober Royale, Broski, Game Cheats, Winterpixel cheats">
-    <meta name="author" content="WinterpixelCheats">
-
-    <!-- Open Graph (OG) Meta Tags for Social Sharing -->
-    <meta property="og:title" content="Winterpixel Games">
-    <meta property="og:description" content="The best all in one website for all Winterpixel Cheats and Tools!">
-    <meta property="og:image" content="ui/Buttonlogo.png"> <!-- Image for social sharing -->
-    <meta property="og:url" content="https://www.winterpixelcheats.com">
-    <meta property="og:type" content="website">
+        <!-- SEO Meta Tags -->
+        <meta name="description" content="Explore the WinterpixelCheats library of cheats for games like Rocket Bot Royale, Goober Dash, Moonrock Miners, and more!">
+        <meta name="keywords" content="Winterpixel Games, Rocket Bot Royale, Goober Dash, Moonrock Miners, Goober Shot, Goober Royale, Broski, Game Assets, Download">
+        <meta name="author" content="WinterpixelCheats">
     
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Winterpixel Games">
-    <meta name="twitter:description" content="WinterpixelCheats provides cheats for games like Rocket Bot Royale, Goober Dash, Moonrock Miners, and more!">
-    <meta name="twitter:image" content="ui/Buttonlogo.png">
+        <!-- Open Graph (OG) Meta Tags for Social Sharing -->
+        <meta property="og:title" content="Winterpixel Games Assets">
+        <meta property="og:description" content="Download assets from Winterpixel's popular games including Rocket Bot Royale, Goober Dash, and more!">
+        <meta property="og:image" content="https://www.winterpixelcheats.com/ui/Buttonlogo.png"> <!-- Image for social sharing -->
+        <meta property="og:url" content="https://www.winterpixelcheats.com">
+        <meta property="og:type" content="website">
+        
+        <!-- Twitter Card Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Winterpixel Games Archive">
+        <meta name="twitter:description" content="Explore the archive of Winterpixel Games with downloadable assets for all winterpixel games!">
+        <meta name="twitter:image" content="https://www.winterpixelcheats.com/ui/Buttonlogo.png">
+    <title>WinterpixelCheats</title>
     <!-- Link to Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;700&display=swap" rel="stylesheet">
 
@@ -33,73 +32,147 @@
 
     <!-- Link to External CSS -->
     <link rel="stylesheet" href="Main.css">
-    
+
     <style>
-        /* Overlay to darken the background */
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            display: none;
-            z-index: 9998;
+        body {
+            font-family: 'Baloo 2', sans-serif;
+            color: white;
         }
-
-        /* Notification Box */
-        .notification-box {
-            max-width: 800px;
-            margin: 0 auto;
+    
+        /* Main content box (dark grey with outlines) */
+        .content-box {
+            background-color: #333;
             padding: 20px;
-            background-color: #333; /* Dark grey background color */
             border-radius: 10px;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3); /* Adjusted shadow for better visibility */
-            border: 6px solid #222; /* Darker grey first outline */
-            outline: 6px solid #fff; /* White outer outline */
-            color: #fff;
-            font-weight: 500;
-            position: fixed;
-            top: -100%;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 9999;
-            transition: top 0.5s ease-in-out;
+            border: 6px solid #222;
+            outline: 6px solid #fff;
+            max-width: 75%; /* 3/4 of the page size */
+            margin: 40px auto;
+            display: flex;
+            flex-direction: row; /* Ensure left and right sections are side by side */
+            justify-content: space-between;
+        }
+    
+        /* Top section for description */
+        .top-section {
             text-align: center;
-            cursor: default; /* Ensures the cursor doesn’t change to a pointer */
+            margin: 40px auto;
+            max-width: 75%; /* Match the width of the content box */
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            border: 6px solid #222;
+            outline: 6px solid #fff;
         }
-
-        /* Image inside the notification */
-        .notification-box img {
-            max-width: 300px;
-            height: auto;
+    
+        /* Left section */
+        .left-section {
+            text-align: center;
+            width: 70%;
+        }
+    
+        /* Right section */
+        .right-section {
+            width: 28%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .right-section h2 {
+            text-align: center;
             margin-bottom: 20px;
-            drop-shadow: 0 0 15px rgba(0, 123, 255, 0.75); /* Blue glow effect */
+            font-size: 22px;
+            color: white;
         }
-
-        /* Text styling */
-        .notification-box p {
-            font-size: 20px;
-            margin: 10px 0;
+    
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
         }
-
-        /* Custom styles for the button */
-        .sites-link {
+    
+        /* Gallery buttons */
+        .image-button {
             display: inline-block;
-            padding: 10px 20px;
-            margin-top: 20px;
-            background-color: #ffffff; /* White background color */
-            color: #333; /* Dark text color for contrast */
-            text-decoration: none; /* Remove underline */
-            border-radius: 5px; /* Rounded corners */
-            font-weight: bold;
-            font-size: 16px;
-            transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+            text-align: center;
         }
+    
+        .image-button img {
+            width: auto;
+            height: auto;
+            max-width: 320px;
+            border-radius: 10px;
+        }
+    
+        /* Buttons in the right section */
+        .sites-button {
+            width: 100%;
+            text-align: center;
+            padding: 15px;
+            background-color: #00a2ff;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease;
+        }
+    
+        .sites-button img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 10px;
+        }
+    
+        .sites-button:hover {
+            background-color: #0078bd;
+        }
+    
+        /* For smaller screens */
+        @media (max-width: 1000px) {
+            .content-box {
+                flex-direction: column;
+                align-items: center; /* Center everything */
+            }
+    
+            .left-section, .right-section {
+                width: 100%; /* Full width for each section */
+                text-align: center;
+            }
+    
+            .button-container {
+                justify-content: center; /* Center the gallery buttons */
+            }
+        }
+    
+        /* YouTube Embed */
+        .video-embed {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+        overflow: hidden;
+        border-radius: 10px;
+    }
 
-        .sites-link:hover {
-            background-color: #f0f0f0; /* Light grey background on hover */
-            color: #000; /* Darker text color on hover */
+    .video-embed iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+    
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
         }
     </style>
 </head>
@@ -107,94 +180,86 @@
 <body>
     <header class="main-header">
         <div class="logo">
-            <a href='/'><img src="ui/Buttonlogo.png" alt="WinterpixelCheats"></a>
+            <a href="Index.html"><img src="ui/Buttonlogo.png" alt="WinterpixelCheats"></a>
         </div>
         <nav>
             <ul>
-                <li><a href='/about'>About</a></li>
-                <li><a href='/services'>Services</a></li>
-                <li><a href='/contact'>Contact</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Services.html">Services</a></li>
+                <li><a href="Contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <div class="overlay" id="overlay"></div>
-
-    <div class="notification-box" id="notification-box">
-        <!-- Image centered inside the content box -->
-        <img src="ui/Logo.png" alt="WinterpixelCheats">
-
-        <p>This website is NOT affiliated with or endorsed by Winterpixel Games Inc. All relevant trademarks belong to their respective owners.</p>
-        <p>Click anywhere to close this notification.</p>
+    <!-- Top Section (Now separated from content box) -->
+    <div class="top-section">
+        <h1 style="color: rgb(255, 255, 255);">About WinterpixelCheats</h1>
+        <p>WinterpixelCheats is designed to help players of Winterpixel games with tools that save time and enhance gameplay. Our goal is to provide an all-in-one platform for players to find the assets and utilities they need to succeed. We are constantly working on new tools and updates!</p>
+        <h2 style="color: rgb(255, 255, 255);">Purpose</h2>
+        <p>My primary purpose in making this website is to help others by providing an all-in-one website with all the tools available! Yes, there is still a lot of work in progress!</p>
     </div>
 
-    <div class="content">
-        <h1>About WinterpixelCheats</h1>
-        <p>I wanted to make a website to help all players who play any of the Winterpixel games with tools that can save them time!</p>
-        
-        <h2 class="section-title">Purpose</h2>
-        <p>My primary purpose in making this website is to help others by providing an all-in-one website with all the tools available! Yes, there is still a lot of work in progress!</p>
-        
-        <h1>Tools!</h1>
+    <!-- Main Content Box (Dark Grey) -->
+    <div class="content-box">
+        <!-- Left Section (Tools) -->
+        <div class="left-section">
+            <h1 style="color: rgb(255, 255, 255);">Tools!</h1>
+            <div class="button-container">
+                <a class="image-button" href="ThumbnailGallery.html">
+                    <img src="ui/thumbnails/ThumbnailGallery.png" alt="Thumbnail Gallery">
+                </a>
+                <a class="image-button" href="CrateOpening.html">
+                    <img src="ui/thumbnails/RBRCrateOpener.png" alt="Rocket Bot Royale Crates Opener">
+                </a>
+                <a class="image-button" href="RBR User Stats.html">
+                    <img src="ui/thumbnails/RBR User Stats UnderConstruction.png" alt="RBR User Stats">
+                </a>
+                <a class="image-button" href="GD User Stats.html">
+                    <img src="ui/thumbnails/GD User Stats UnderConstruction.png" alt="GD User Stats">
+                </a>
+                <a class="image-button" href="AutomaticCoinRedeemer.html">
+                    <img src="ui/thumbnails/UnderConstruction.png" alt="Automatic Coin Redeemer">
+                </a>
+                <a class="image-button" href="Accept all friends.html">
+                    <img src="ui/thumbnails/UnderConstruction.png" alt="Accept All Friends">
+                </a>
+            </div>
+        </div>
 
-        <!-- Button Container -->
-        <div class="button-container">
-            <!-- Buttons -->
-            <a class='image-button' href='/thumbnailgallery'>
-                <img src="ui/thumbnails/ThumbnailGallery.png" alt="ThumbnailGallery Thumbnail">
+        <!-- Right Section -->
+        <div class="right-section">
+            <h1>Latest Video!</h1>
+            <div class="video-embed">
+                <!-- Embed your latest video -->
+                <iframe src="https://www.youtube.com/embed/3FdVUKs20vw" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <h1>Others!</h1>
+            <!-- Other Sites Button -->
+            <a href="OtherSites.html" class="sites-button">
+                Other Winterpixel Related Sites
             </a>
-            <a class='image-button' href='/crateopening'>
-                <img src="ui/thumbnails/RBRCrateOpener.png" alt="Rocket Bot Royale Crates Opener">
-            </a>
-            <a class="image-button" href="RBR User Stats.html">
-                <img src="ui/thumbnails/RBR User Stats UnderConstruction.png" alt="UnderConstruction">
-            </a>
-            <a class="image-button" href="GD User Stats.html">
-                <img src="ui/thumbnails/GD User Stats UnderConstruction.png" alt="UnderConstruction">
-            </a>
-            <a class="image-button" href="AutomaticCoinRedeemer.html">
-                <img src="ui/thumbnails/UnderConstruction.png" alt="UnderConstruction">
-            </a>
-            <a class="image-button" href="Accept all friends.html">
-                <img src="ui/thumbnails/UnderConstruction.png" alt="UnderConstruction">
+
+            <!-- Winterpixel Assets Button -->
+            <a href="WinterpixelAssets.html" class="sites-button">
+                Winterpixel Assets
             </a>
         </div>
-        <p><a class='sites-link' href='/WinterpixelAssets' rel='noopener noreferrer' target='_blank'>Winterpixel Assets</a></p>
-        <p><a class='sites-link' href='/othersites' rel='noopener noreferrer' target='_blank'>Other WinterPixel related websites!</a></p>
     </div>
-    <script>
-        // Check if the notification has already been shown
-        if (!localStorage.getItem('notificationShown')) {65
-            // Show the overlay and notification box
-            document.getElementById('overlay').style.display = 'block';
-            document.getElementById('notification-box').style.top = '10%';
 
-            // Hide the notification when clicking anywhere
-            document.body.addEventListener('click', function () {
-                document.getElementById('notification-box').style.top = '-200%';
-                document.getElementById('overlay').style.display = 'none';
-                localStorage.setItem('notificationShown', 'true');
-            });
-        } else {
-            // Hide the notification box completely after the first time
-            document.getElementById('notification-box').style.display = 'none';
-            document.getElementById('overlay').style.display = 'none';
-        }
-    </script>
-
-<footer>
-    <div class="footer-content">
-        <ul>
-            <li><a href='/privacypolicy'>Privacy Policy</a></li>
-            <li><a href='/about'>About Us</a></li>
-            <li><a href='/contact'>Contact Us</a></li>
-            <li><a href='/othersites'>Other Sites</a></li>
-        </ul>
-    </div>
-    <div class="copyright">
-        <p>&copy; 2024 WinterpixelCheats.com All rights reserved.</p>
-    </div>
-</footer>
+    <footer>
+        <div class="footer-content">
+            <ul>
+                <li><a href="PrivacyPolicy.html">Privacy Policy</a></li>
+                <li><a href="About.html">About Us</a></li>
+                <li><a href="Contact.html">Contact Us</a></li>
+                <li><a href="OtherSites.html">Other Sites</a></li>
+            </ul>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 WinterpixelCheats.com All rights reserved.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
