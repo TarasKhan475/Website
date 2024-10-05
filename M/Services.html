@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <!-- Link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon Links -->
+    <link rel="apple-touch-icon" sizes="180x180" href="ui/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="ui/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="ui/favicons/favicon-16x16.png">
+    <link rel="manifest" href="ui/favicons/site.webmanifest">
+
+    <!-- Link to External CSS -->
+    <link rel="stylesheet" href="Main.css">
+    
+    <style>
+        /* Overlay to darken the background */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: none;
+            z-index: 9998;
+        }
+
+        /* Notification Box */
+        .notification-box {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #333; /* Dark grey background color */
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3); /* Adjusted shadow for better visibility */
+            border: 6px solid #222; /* Darker grey first outline */
+            outline: 6px solid #fff; /* White outer outline */
+            color: #fff;
+            font-weight: 500;
+            position: fixed;
+            top: -100%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9999;
+            transition: top 0.5s ease-in-out;
+            text-align: center;
+            cursor: default; /* Ensures the cursor doesn’t change to a pointer */
+        }
+
+        /* Image inside the notification */
+        .notification-box img {
+            max-width: 300px;
+            height: auto;
+            margin-bottom: 20px;
+            drop-shadow: 0 0 15px rgba(0, 123, 255, 0.75); /* Blue glow effect */
+        }
+
+        /* Text styling */
+        .notification-box p {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <a href="Index.html"><img src="ui/Buttonlogo.png" alt="WinterpixelCheats"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Services.html">Services</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="overlay" id="overlay"></div>
+
+    <div class="notification-box" id="notification-box">
+        <!-- Image centered inside the content box -->
+        <img src="ui/Logo.png" alt="WinterpixelCheats">
+
+        <p>This website is NOT affiliated with or endorsed by Winterpixel Games Inc. All relevant trademarks belong to their respective owners.</p>
+        <p>Click anywhere to close this notification.</p>
+    </div>
+
+    <div class="content">
+        <h1>Services!</h1>
+
+        <!-- Button Container -->
+        <div class="button-container">
+            <!-- Buttons -->
+            <a class="image-button" href="ThumbnailGallery.html">
+                <img src="ui/thumbnails/ThumbnailGallery.png" alt="ThumbnailGallery Thumbnail">
+            </a>
+            <a class="image-button" href="CrateOpening.html">
+                <img src="ui/thumbnails/RBRCrateOpener.png" alt="Rocket Bot Royale Crates Opener">
+            </a>
+            <a class="image-button" href="RBR User Stats.html">
+                <img src="ui/thumbnails/RBR User Stats UnderConstruction.png" alt="UnderConstruction">
+            </a>
+            <a class="image-button" href="GD User Stats.html">
+                <img src="ui/thumbnails/GD User Stats UnderConstruction.png" alt="UnderConstruction">
+            </a>
+            <a class="image-button" href="AutomaticCoinRedeemer.html">
+                <img src="ui/thumbnails/UnderConstruction.png" alt="UnderConstruction">
+            </a>
+            <a class="image-button" href="Accept all friends.html">
+                <img src="ui/thumbnails/UnderConstruction.png" alt="UnderConstruction">
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Check if the notification has already been shown
+        if (!localStorage.getItem('notificationShown')) {
+            // Show the overlay and notification box
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('notification-box').style.top = '10%';
+
+            // Hide the notification when clicking anywhere
+            document.body.addEventListener('click', function () {
+                document.getElementById('notification-box').style.top = '-200%';
+                document.getElementById('overlay').style.display = 'none';
+                localStorage.setItem('notificationShown', 'true');
+            });
+        } else {
+            // Hide the notification box completely after the first time
+            document.getElementById('notification-box').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
+
+<footer>
+    <div class="footer-content">
+        <ul>
+            <li><a href="PrivacyPolicy.html">Privacy Policy</a></li>
+            <li><a href="About.html">About Us</a></li>
+            <li><a href="Contact.html">Contact Us</a></li>
+            <li><a href="OtherSites.html">Other Sites</a></li>
+        </ul>
+    </div>
+    <div class="copyright">
+        <p>&copy; 2024 WinterpixelCheats.com All rights reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>
