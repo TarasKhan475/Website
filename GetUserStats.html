@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RocketBot Royale API Client</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        input {
+            padding: 8px;
+            width: 250px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #00a2ff;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0078bd;
+        }
+        #result {
+            margin-top: 20px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>RocketBot Royale API Client</h1>
+
+    <!-- Form for User ID or Friend Code -->
+    <div class="form-group">
+        <label for="userId">Enter User ID or Friend Code:</label><br>
+        <input type="text" id="userId" placeholder="User ID or Friend Code">
+    </div>
+
+    <button id="submitBtn">Submit</button>
+
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('submitBtn').addEventListener('click', async () => {
+            const userInput = document.getElementById('userId').value.trim();
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerText = 'Processing...';
+
+            try {
+                const response = await fetch('/.netlify/functions/getUserInfo', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ userInput }),
+                });
+
+                const contentType = response.headers.get('content-type');
+                let data;
+
+                // Check if the response is in JSON format
+                if (contentType && contentType.includes('application/json')) {
+                    data = await response.json();
+                } else {
+                    throw new Error('Invalid JSON response');
+                }
+
+                if (response.ok) {
+                    resultDiv.innerText = JSON.stringify(data, null, 2);
+                } else {
+                    resultDiv.innerText = `Error: ${data.error}`;
+                }
+            } catch (error) {
+                resultDiv.innerText = `Error: ${error.message}`;
+            }
+        });
+    </script>
+</body>
+</html>
