@@ -1,282 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- SEO Meta Tags -->
-        <meta name="description" content="Explore the WinterpixelCheats library of cheats for games like Rocket Bot Royale, Goober Dash, Moonrock Miners, and more!">
-        <meta name="keywords" content="Winterpixel Games, Rocket Bot Royale, Goober Dash, Moonrock Miners, Goober Shot, Goober Royale, Broski, Game Assets, Download">
-        <meta name="author" content="WinterpixelCheats">
-    
-        <!-- Open Graph (OG) Meta Tags for Social Sharing -->
-        <meta property="og:title" content="WinterpixelCheats">
-        <meta property="og:description" content="Explore the WinterpixelCheats library of cheats for games like Rocket Bot Royale, Goober Dash, Moonrock Miners, and more!">
-        <meta property="og:image" content="https://www.winterpixelcheats.com/ui/Buttonlogo.png"> <!-- Image for social sharing -->
-        <meta property="og:url" content="https://www.winterpixelcheats.com">
-        <meta property="og:type" content="website">
-        
-        <!-- Twitter Card Meta Tags -->
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="WinterpixelCheats">
-        <meta name="twitter:description" content="Explore the WinterpixelCheats library of cheats for games like Rocket Bot Royale, Goober Dash, Moonrock Miners, and more!">
-        <meta name="twitter:image" content="https://www.winterpixelcheats.com/ui/Buttonlogo.png">
-    <title>WinterpixelCheats</title>
-    <!-- Link to Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;700&display=swap" rel="stylesheet">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- SEO Meta Tags -->
+		<meta name="description" content="Explore the WinterpixelCheats library of cheats for games like Rocket Bot Royale, Goober Dash, Moonrock Miners, and more!" />
+		<meta name="keywords" content="Winterpixel Games, Rocket Bot Royale, Goober Dash, Moonrock Miners, Goober Shot, Goober Royale, Broski, Game Assets, Download" />
+		<meta name="author" content="WinterpixelCheats" />
 
-    <!-- Favicon Links -->
-    <link rel="apple-touch-icon" sizes="180x180" href="ui/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="ui/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="ui/favicons/favicon-16x16.png">
-    <link rel="manifest" href="ui/favicons/site.webmanifest">
+		<!-- Open Graph (OG) Meta Tags for Social Sharing -->
+		<meta property="og:title" content="WinterpixelCheats" />
+		<meta property="og:description" content="Explore the WinterpixelCheats library of cheats for games like Rocket Bot Royale, Goober Dash, Moonrock Miners, and more!" />
+		<meta property="og:image" content="https://www.winterpixelcheats.com/ui/Buttonlogo.png" />
+		<!-- Image for social sharing -->
+		<meta property="og:url" content="https://www.winterpixelcheats.com" />
+		<meta property="og:type" content="website" />
 
-    <!-- Link to External CSS -->
-    <link rel="stylesheet" href="Main.css">
+		<!-- Twitter Card Meta Tags -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="WinterpixelCheats" />
+		<meta name="twitter:description" content="Explore the WinterpixelCheats library of cheats for games like Rocket Bot Royale, Goober Dash, Moonrock Miners, and more!" />
+		<meta name="twitter:image" content="https://www.winterpixelcheats.com/ui/Buttonlogo.png" />
+		<title>WinterpixelCheats</title>
+		<!-- Link to Google Fonts -->
+		<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;700&display=swap" rel="stylesheet" />
 
-    <style>
-        body {
-            font-family: 'Baloo 2', sans-serif;
-            color: white;
-        }
-    
-        /* Main content box (dark grey with outlines) */
-        .content-box {
-            background-color: #333;
-            padding: 20px;
-            border-radius: 10px;
-            border: 6px solid #222;
-            outline: 6px solid #fff;
-            max-width: 75%;
-            margin: 40px auto;
-            display: flex;
-            flex-direction: row; /* Ensure left and right sections are side by side */
-            justify-content: space-between;
-        }
-    
-        /* Top section for description */
-        .top-section {
-            text-align: center;
-            margin: 40px auto;
-            max-width: 75%; /* Match the width of the content box */
-            padding: 20px;
-            background-color: #333;
-            border-radius: 10px;
-            border: 6px solid #222;
-            outline: 6px solid #fff;
-        }
-    
-        /* Left section */
-        .left-section {
-            text-align: center;
-            width: 70%;
-        }
-    
-        /* Right section */
-        .right-section {
-            width: 28%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-    
-        .right-section h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 22px;
-            color: white;
-        }
-    
-        .button-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-    
-        /* Gallery buttons */
-        .image-button {
-            display: inline-block;
-            text-align: center;
-        }
-    
-        .image-button img {
-            width: auto;
-            height: auto;
-            max-width: 320px;
-            border-radius: 10px;
-        }
-    
-        /* Buttons in the right section */
-        .sites-button {
-            width: 100%;
-            text-align: center;
-            padding: 15px;
-            background-color: #00a2ff;
-            color: white;
-            text-decoration: none;
-            font-size: 20px;
-            border-radius: 20px;
-            margin-bottom: 20px;
-            transition: background-color 0.3s ease;
-        }
-    
-        .sites-button img {
-            width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto 10px;
-        }
-    
-        .sites-button:hover {
-            background-color: #0078bd;
-        }
-    
-        /* For smaller screens */
-        @media (max-width: 1000px) {
-            .content-box {
-                flex-direction: column;
-                align-items: center; /* Center everything */
-            }
-    
-            .left-section, .right-section {
-                width: 100%; /* Full width for each section */
-                text-align: center;
-            }
-    
-            .button-container {
-                justify-content: center; /* Center the gallery buttons */
-            }
-        }
-    
-        /* YouTube Embed */
-        .video-embed {
-        position: relative;
-        width: 100%;
-        padding-bottom: 56.25%; /* 16:9 aspect ratio */
-        height: 0;
-        overflow: hidden;
-        border-radius: 10px;
-    }
+		<!-- Favicon Links -->
+		<link rel="apple-touch-icon" sizes="180x180" href="ui/favicons/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="ui/favicons/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="ui/favicons/favicon-16x16.png" />
+		<link rel="manifest" href="ui/favicons/site.webmanifest" />
 
-    .video-embed iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: none;
-    }
-    
-        /* Footer */
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-    </style>
-</head>
+		<!-- Link to External CSS -->
+		<link rel="stylesheet" href="Main.css" />
 
-<body>
-    <header class="main-header">
-        <div class="logo">
-            <a href="Index.html"><img src="ui/Buttonlogo.png" alt="WinterpixelCheats"></a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="About.html">About</a></li>
-                <li><a href="Services.html">Services</a></li>
-                <li><a href="Contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+		<style>
+			body {
+				font-family: 'Baloo 2', sans-serif;
+				color: white;
+			}
 
-    <!-- Top Section (Now separated from content box) -->
-    <div class="top-section">
-        <h1 style="color: rgb(255, 255, 255);">About WinterpixelCheats</h1>
-        <p>WinterpixelCheats is designed to help players of Winterpixel games with tools that save time and enhance gameplay. Our goal is to provide an all-in-one platform for players to find the assets and utilities they need to succeed. We are constantly working on new tools and updates!</p>
-        <h2 style="color: rgb(255, 255, 255);">Purpose</h2>
-        <p>My primary purpose in making this website is to help others by providing an all-in-one website with all the tools available! Yes, there is still a lot of work in progress!</p>
-    </div>
+			/* Main content box (dark grey with outlines) */
+			.content-box {
+				background-color: #333;
+				padding: 20px;
+				border-radius: 10px;
+				border: 6px solid #222;
+				outline: 6px solid #fff;
+				max-width: 75%;
+				margin: 40px auto;
+				display: flex;
+				flex-direction: row; /* Ensure left and right sections are side by side */
+				justify-content: space-between;
+			}
 
-    <!-- Main Content Box (Dark Grey) -->
-    <div class="content-box">
-        <!-- Left Section (Tools) -->
-        <div class="left-section">
-            <h1 style="color: rgb(255, 255, 255);">Tools!</h1>
-            <p style="color: rgb(255, 255, 255);">
-                These tools do not require any coding knowledge!
-            </p>
-            <div class="button-container">
-                <a class="image-button" href="ThumbnailGallery.html">
-                    <img src="ui/thumbnails/FreeThumbnails.png" alt="Rocket Bot Royale Thumbnails Gallery">
-                </a>
-                <a class="image-button" href="CrateOpening.html">
-                    <img src="ui/thumbnails/RBRCrateOpener.png" alt="Rocket Bot Royale Crates Opener">
-                </a>
-                <a class="image-button" href="404.html">
-                    <img src="ui/thumbnails/RBRUserStatsConstruction.png" alt="Rocket Bot Royale User Stats">
-                </a>
-                <a class="image-button" href="https://winterpixelgames.com/">
-                    <img src="ui/thumbnails/GDUserStats.png" alt="Goober Dash User Stats">
-                </a>
-            </div>
-        
-            <h1 style="color: rgb(255, 255, 255);">Advanced Tools!</h1>
-            <p style="color: rgb(255, 255, 255);">
-                These tools require coding knowledge, and the main reason any tool is here is because they need email and password. 
-                I do not want to handle any sensitive information.
-            </p>
-            <div class="button-container">
-                <a class="image-button" href="RBRUserStatsLocal.html">
-                    <img src="ui/thumbnails/RBRUserStatsLocal.png" alt="Rocket Bot Royale User stats local">
-                </a>
-                <a class="image-button" href="RandomizeTanks.html">
-                    <img src="ui/thumbnails/TankRandomizer.png" alt="Rocket Bot Royale Tank Randomizer">
-                </a>
-                <a class="image-button" href="https://wph.ambersys.app/acrv2/">
-                    <img src="ui/thumbnails/RBRACR.png" alt="Rocket Bot Royale Automatic Coin Redeemer">
-                </a>
-                <a class="image-button" href="DeclineAllFriends.html">
-                    <img src="ui/thumbnails/DeclineAllFriends.png" alt="Decline All Friends in Rocket Bot Royale">
-                </a>
-            </div>
-        </div>        
+			/* Top section for description */
+			.top-section {
+				text-align: center;
+				margin: 40px auto;
+				max-width: 75%; /* Match the width of the content box */
+				padding: 20px;
+				background-color: #333;
+				border-radius: 10px;
+				border: 6px solid #222;
+				outline: 6px solid #fff;
+			}
 
-        <!-- Right Section -->
-        <div class="right-section">
-            <h1>Latest Video!</h1>
-            <div class="video-embed">
-                <!-- Embed your latest video -->
-                <iframe src="https://www.youtube.com/embed/6bGpmrE151w" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
+			/* Left section */
+			.left-section {
+				text-align: center;
+				width: 70%;
+			}
 
-            <h1>Others!</h1>
-            <!-- Other Sites Button -->
-            <a href="OtherSites.html" class="sites-button">
-                Other Winterpixel Related Sites
-            </a>
+			/* Right section */
+			.right-section {
+				width: 28%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
 
-            <!-- Winterpixel Assets Button -->
-            <a href="WinterpixelAssets.html" class="sites-button">
-                Winterpixel Assets
-            </a>
-        </div>
-    </div>
+			.right-section h2 {
+				text-align: center;
+				margin-bottom: 20px;
+				font-size: 22px;
+				color: white;
+			}
 
-    <footer>
-        <div class="footer-content">
-            <ul>
-                <li><a href="PrivacyPolicy.html">Privacy Policy</a></li>
-                <li><a href="About.html">About Us</a></li>
-                <li><a href="Contact.html">Contact Us</a></li>
-                <li><a href="OtherSites.html">Other Sites</a></li>
-            </ul>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2024 WinterpixelCheats.com All rights reserved.</p>
-        </div>
-    </footer>
+			.button-container {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 20px;
+				justify-content: center;
+			}
 
-</body>
+			/* Gallery buttons */
+			.image-button {
+				display: inline-block;
+				text-align: center;
+			}
+
+			.image-button img {
+				width: auto;
+				height: auto;
+				max-width: 320px;
+				border-radius: 10px;
+			}
+
+			/* Buttons in the right section */
+			.sites-button {
+				width: 100%;
+				text-align: center;
+				padding: 15px;
+				background-color: #00a2ff;
+				color: white;
+				text-decoration: none;
+				font-size: 20px;
+				border-radius: 20px;
+				margin-bottom: 20px;
+				transition: background-color 0.3s ease;
+			}
+
+			.sites-button img {
+				width: 100%;
+				height: auto;
+				display: block;
+				margin: 0 auto 10px;
+			}
+
+			.sites-button:hover {
+				background-color: #0078bd;
+			}
+
+			/* For smaller screens */
+			@media (max-width: 1000px) {
+				.content-box {
+					flex-direction: column;
+					align-items: center; /* Center everything */
+				}
+
+				.left-section,
+				.right-section {
+					width: 100%; /* Full width for each section */
+					text-align: center;
+				}
+
+				.button-container {
+					justify-content: center; /* Center the gallery buttons */
+				}
+			}
+
+			/* YouTube Embed */
+			.video-embed {
+				position: relative;
+				width: 100%;
+				padding-bottom: 56.25%; /* 16:9 aspect ratio */
+				height: 0;
+				overflow: hidden;
+				border-radius: 10px;
+			}
+
+			.video-embed iframe {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				border: none;
+			}
+
+			/* Footer */
+			footer {
+				background-color: #333;
+				color: white;
+				padding: 20px;
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="main-header">
+			<div class="logo">
+				<a href="index.html"><img src="ui/Buttonlogo.png" alt="WinterpixelCheats" /></a>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="About.html">About</a></li>
+					<li><a href="Services.html">Services</a></li>
+					<li><a href="Contact.html">Contact</a></li>
+					<!-- <li><a href="Contact.html">Contact</a></li> -->
+				</ul>
+			</nav>
+		</header>
+
+		<!-- Top Section (Now separated from content box) -->
+		<div class="top-section">
+			<h1 style="color: rgb(255, 255, 255)">About WinterpixelCheats</h1>
+			<p>WinterpixelCheats is designed to help players of Winterpixel games with tools that save time and enhance gameplay. Our goal is to provide an all-in-one platform for players to find the assets and utilities they need to succeed. We are constantly working on new tools and updates!</p>
+			<h2 style="color: rgb(255, 255, 255)">Purpose</h2>
+			<p>My primary purpose in making this website is to help others by providing an all-in-one website with all the tools available! Yes, there is still a lot of work in progress!</p>
+		</div>
+
+		<!-- Main Content Box (Dark Grey) -->
+		<div class="content-box">
+			<!-- Left Section (Tools) -->
+			<div class="left-section">
+				<h1 style="color: rgb(255, 255, 255)">Tools!</h1>
+				<p style="color: rgb(255, 255, 255)">These tools do not require any coding knowledge!</p>
+				<div class="button-container">
+					<a class="image-button" href="ThumbnailGallery.html">
+						<img src="ui/thumbnails/FreeThumbnails.png" alt="Rocket Bot Royale Thumbnails Gallery" />
+					</a>
+					<a class="image-button" href="CrateOpening.html">
+						<img src="ui/thumbnails/RBRCrateOpener.png" alt="Rocket Bot Royale Crates Opener" />
+					</a>
+					<a class="image-button" href="404.html">
+						<img src="ui/thumbnails/RBRUserStatsConstruction.png" alt="Rocket Bot Royale User Stats" />
+					</a>
+					<a class="image-button" href="https://winterpixelgames.com/">
+						<img src="ui/thumbnails/GDUserStats.png" alt="Goober Dash User Stats" />
+					</a>
+				</div>
+
+				<h1 style="color: rgb(255, 255, 255)">Advanced Tools!</h1>
+				<p style="color: rgb(255, 255, 255)">These tools require coding knowledge, and the main reason any tool is here is because they need email and password. I do not want to handle any sensitive information.</p>
+				<div class="button-container">
+					<a class="image-button" href="RBRUserStatsLocal.html">
+						<img src="ui/thumbnails/RBRUserStatsLocal.png" alt="Rocket Bot Royale User stats local" />
+					</a>
+					<a class="image-button" href="RandomizeTanks.html">
+						<img src="ui/thumbnails/TankRandomizer.png" alt="Rocket Bot Royale Tank Randomizer" />
+					</a>
+					<a class="image-button" href="https://wph.ambersys.app/acrv2/">
+						<img src="ui/thumbnails/RBRACR.png" alt="Rocket Bot Royale Automatic Coin Redeemer" />
+					</a>
+					<a class="image-button" href="DeclineAllFriends.html">
+						<img src="ui/thumbnails/DeclineAllFriends.png" alt="Decline All Friends in Rocket Bot Royale" />
+					</a>
+				</div>
+			</div>
+
+			<!-- Right Section -->
+			<div class="right-section">
+				<h1>Latest Video!</h1>
+				<div class="video-embed">
+					<!-- Embed your latest video -->
+					<iframe src="https://www.youtube.com/embed/6bGpmrE151w" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+
+				<h1>Others!</h1>
+				<!-- Other Sites Button -->
+				<a href="OtherSites.html" class="sites-button"> Other Winterpixel Related Sites </a>
+
+				<!-- Winterpixel Assets Button -->
+				<a href="WinterpixelAssets.html" class="sites-button"> Winterpixel Assets </a>
+			</div>
+		</div>
+
+		<footer>
+			<div class="footer-content">
+				<ul>
+					<li><a href="PrivacyPolicy.html">Privacy Policy</a></li>
+					<li><a href="About.html">About Us</a></li>
+					<li><a href="Contact.html">Contact Us</a></li>
+					<li><a href="OtherSites.html">Other Sites</a></li>
+				</ul>
+			</div>
+			<div class="copyright">
+				<p>&copy; 2024 WinterpixelCheats.com All rights reserved.</p>
+			</div>
+		</footer>
+		<script src="./scripts/universal.js"></script>
+		<script>
+			alertUser('Connected');
+		</script>
+	</body>
 </html>
