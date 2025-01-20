@@ -1,75 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - WinterpixelCheats</title>
-    <!-- Link to Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;700&display=swap" rel="stylesheet">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Contact Us - WinterpixelCheats</title>
+		<!-- Link to Google Fonts -->
+		<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;700&display=swap" rel="stylesheet" />
 
-    <!-- Favicon Links -->
-    <link rel="apple-touch-icon" sizes="180x180" href="ui/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="ui/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="ui/favicons/favicon-16x16.png">
-    <link rel="manifest" href="ui/favicons/site.webmanifest">
+		<!-- Favicon Links -->
+		<link rel="apple-touch-icon" sizes="180x180" href="ui/favicons/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="ui/favicons/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="ui/favicons/favicon-16x16.png" />
+		<link rel="manifest" href="ui/favicons/site.webmanifest" />
 
-    <!-- Link to External CSS -->
-    <link rel="stylesheet" href="Main.css">
+		<!-- Link to External CSS -->
+		<link rel="stylesheet" href="Main.css" />
 
-    <style>
-        /* Custom styles for the Discord link */
-        .discord-link {
-            display: inline-block;
-            padding: 10px 20px;
-            margin-top: 20px;
-            background-color: #ffffff; /* White background color */
-            color: #333; /* Dark text color for contrast */
-            text-decoration: none; /* Remove underline */
-            border-radius: 5px; /* Rounded corners */
-            font-weight: bold;
-            font-size: 16px;
-            transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
-        }
+		<style>
+			/* Custom styles for the Discord link */
+			.discord-link {
+				display: inline-block;
+				padding: 10px 20px;
+				margin-top: 20px;
+				background-color: #ffffff;
+				color: #333;
+				text-decoration: none;
+				border-radius: 5px;
+				font-weight: bold;
+				font-size: 16px;
+				transition: background-color 0.3s, color 0.3s;
+			}
 
-        .discord-link:hover {
-            background-color: #f0f0f0; /* Light grey background on hover */
-            color: #000; /* Darker text color on hover */
-        }
-    </style>
-</head>
-<body>
-    <header class="main-header">
-        <div class="logo">
-            <a href="Index.html"><img src="ui/Buttonlogo.png" alt="WinterpixelCheats"></a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="About.html">About</a></li>
-                <li><a href="Services.html">Services</a></li>
-                <li><a href="Contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+			.discord-link:hover {
+				background-color: #f0f0f0;
+				color: #000;
+			}
 
-    <div class="content">
-        <img src="ui/Logo.png" alt="WinterpixelCheats">
-        <h1>Contact Us</h1>
-        <p>If you want to contact me for any purposes, feel free to join my server where I am active!</p>
-        <p><a href="https://discord.gg/SPTAs6mTGe" target="_blank" rel="noopener noreferrer" class="discord-link">Join my Discord server</a></p>
-    </div>
+			/* Form Styles */
+			form {
+				margin-top: 30px;
+				padding: 20px;
+				background-color: #333;
+				border-radius: 10px;
+				box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+			}
 
-    <footer>
-        <div class="footer-content">
-            <ul>
-                <li><a href="PrivacyPolicy.html">Privacy Policy</a></li>
-                <li><a href="About.html">About Us</a></li>
-                <li><a href="Contact.html">Contact Us</a></li>
-                <li><a href="OtherSites.html">Other Sites</a></li>
-            </ul>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2024 WinterpixelCheats.com All rights reserved.</p>
-        </div>
-    </footer>
-</body>
+			form input, form textarea, form button {
+				width: calc(100% - 40px);
+				margin: 10px 0;
+				padding: 10px 15px;
+				border: none;
+				border-radius: 5px;
+				font-size: 16px;
+				font-family: 'Baloo 2', sans-serif;
+			}
+
+			form input, form textarea {
+				background-color: #444;
+				color: #fff;
+			}
+
+			form input:focus, form textarea:focus {
+				outline: 2px solid #00a2ff;
+			}
+
+			form button {
+				background-color: #00a2ff;
+				color: white;
+				cursor: pointer;
+				transition: background-color 0.3s ease;
+			}
+
+			form button:hover {
+				background-color: #0078bd;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="main-header">
+			<div class="logo">
+				<a href='/'><img src="ui/Buttonlogo.png" alt="WinterpixelCheats" /></a>
+			</div>
+			<nav>
+				<ul>
+					<li><a href='/about'>About</a></li>
+					<li><a href='/services'>Services</a></li>
+					<li><a href='/contact'>Contact</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<div class="content">
+			<img src="ui/Logo.png" alt="WinterpixelCheats" />
+			<h1>Contact Us</h1>
+			<p>If you want to contact me for any purposes, feel free to send me a message below!</p>
+            <form name="contact" method="POST" data-netlify="true" action="/thank-you">
+				<input type="hidden" name="form-name" value="contact" />
+				<input type="text" name="name" placeholder="Your Name" required />
+				<input type="email" name="email" placeholder="Your Email" required />
+				<textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+				<button type="submit">Send Message</button>
+			</form>
+            <h1>Contact Us on Discord</h1>
+            <p>If you want to contact me directly, feel free to join my discord server!</p>
+			<div>
+				<p style="cursor: pointer; font-weight: bolder" onclick="copyUsername('taraskhan475')">@TarasKhan475 (discord username)</p>
+				<p style="cursor: pointer; font-weight: bolder" onclick="copyUsername('Sebastian_105')">@Sebastian_105 (discord username)</p>
+			</div>
+			<p><a href="https://discord.gg/SPTAs6mTGe" target="_blank" rel="noopener noreferrer" class="discord-link">Join my Discord server</a></p>
+			<p><a href="https://discord.gg/kdGuBhXz2r" target="_blank" rel="noopener noreferrer" class="discord-link">Join WPG discord server</a></p>
+		</div>
+
+		<footer>
+			<div class="footer-content">
+				<ul>
+					<li><a href='/privacypolicy'>Privacy Policy</a></li>
+					<li><a href='/about'>About Us</a></li>
+					<li><a href='/contact'>Contact Us</a></li>
+					<li><a href='/othersites'>Other Sites</a></li>
+				</ul>
+			</div>
+			<div class="copyright">
+				<p>&copy; 2024 WinterpixelCheats.com All rights reserved.</p>
+			</div>
+		</footer>
+		<script>
+			function copyUsername(message) {
+				navigator.clipboard.writeText(message);
+				alertUser(`Successfully copied ${message} to clipboard`);
+			}
+		</script>
+		<script src="./scripts/universal.js"></script>
+	</body>
 </html>
