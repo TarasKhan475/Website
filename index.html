@@ -70,6 +70,22 @@
             margin: 10px 0;
         }
 
+        .new-label {
+            position: absolute;
+            top: 10px;  /* Move to top */
+            right: 10px;  /* Align to the right */
+            background-color: red;  /* Background color */
+            color: white;  /* Text color */
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-family: 'Baloo 2', cursive;  /* Match your button text style */
+            z-index: 2;  /* Ensure it appears above the image */
+            display: block;  /* Always visible */
+        }
+
         /* Platforms Section Styling */
         .platforms {
             display: flex;
@@ -202,6 +218,7 @@
             background-color: #333;
             border-radius: 30px;
             transition: 0.1s ease-in-out;
+            
         }
 
         .sidebar ul li a:hover {
@@ -231,7 +248,7 @@
             margin-left: 100px;
         }
 
-        /* Hide all content sections initially */
+        /* Hide all content sections  */
         .content-section {
             display: none;
             padding: 20px;
@@ -240,17 +257,17 @@
             margin-top: 10px;
         }
 
-        /* Show active section */
+        /* Show active section on the sidebar lol */
         .active {
             display: block;
         }
 
-        /* Button Styles */
+        /* for the logo */
         .sites-button {
             display: inline-block;
             padding: 12px 20px;
             margin-top: 15px;
-            background-color: #00a2ff; /* Button color */
+            background-color: #00a2ff;
             color: white;
             font-size: 16px;
             text-decoration: none;
@@ -260,16 +277,14 @@
         }
 
         .sites-button:hover {
-            background-color: #0078bd; /* Darker button color on hover */
-            transform: scale(1.05); /* Slightly enlarge button on hover */
+            background-color: #0078bd;
+            transform: scale(1.05);
         }
 
-        /* Optional: Add a box shadow to the button for better visibility */
         .sites-button:focus, .sites-button:hover {
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        /* Ensure the button is centered horizontally */
         .content-section {
             text-align: center;
             padding: 20px;
@@ -278,7 +293,7 @@
 
         .content-image {
             width: 100%;
-            max-width: 600px; /* Set a max-width to prevent it from becoming too large */
+            max-width: 600px;
             height: auto;
             display: block;
             margin: 0 auto;
@@ -345,11 +360,12 @@
             <h1 style="color: rgb(255, 255, 255)">Featured Tools!</h1>
 			<p style="color: rgb(255, 255, 255); font-weight: bolder">Some of the best tools we offer! To see more, navigate using the sidebar.</p>
 			<div class="button-container">
+                <a class="image-button" href="https://twhlynch.me/goober-dash-level-modding/?tab=tools">
+                    <div class="new-label">NEW!</div>
+                    <img src="ui/thumbnails/GDModding.png" alt="Huge list of goober dash level mods to cusotmize your level!" />
+                </a>
 				<a class="image-button" href="ThumbnailGallery.html">
 					<img src="ui/thumbnails/FreeThumbnails.png" alt="Rocket Bot Royale Thumbnails Gallery" />
-				</a>
-				<a class="image-button" href="CrateOpening.html">
-					<img src="ui/thumbnails/RBRCrateOpener.png" alt="Rocket Bot Royale Crates Opener" />
 				</a>
 				<a class="image-button" href="https://rbrapi.onrender.com">
 					<img src="ui/thumbnails/RBRUserStats.png" alt="Rocket Bot Royale User Stats" />
@@ -413,6 +429,10 @@
             </div>
             <h1>Tools</h1>
             <div class="button-container">
+                <a class="image-button" href="https://twhlynch.me/goober-dash-level-modding/?tab=tools">
+                    <div class="new-label">NEW!</div>
+                    <img src="ui/thumbnails/GDModding.png" alt="Huge list of goober dash level mods to cusotmize your level!" />
+                </a>
 				<a class="image-button" href="https://winterpixelgames.com/">
 					<img src="ui/thumbnails/GDUserStats.png" alt="Goober Dash User Stats" />
 				</a>
@@ -499,7 +519,7 @@
 
         <div style="text-align: center; margin-top: 20px;">
             <div style="background-color: #494949b7; color: rgb(255, 255, 255); padding: 10px 20px; border-radius: 30px; display: inline-block; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-                <p style="margin: 0;">2025 WinterpixelCheats.com All rights reserved.</p>
+                <p style="margin: 0;">Not affiliated with or endorsed by Winterpixel</p>
             </div>
         </div>
 
@@ -546,24 +566,6 @@
         window.onload = function () {
             showContent('main-page'); // Set the default visible section
         };
-
-        // Check if the notification has already been shown
-        if (!localStorage.getItem('notificationShown')) {
-            // Show the overlay and notification box
-            document.getElementById('overlay').style.display = 'block';
-            document.getElementById('notification-box').style.top = '10%';
-
-            // Hide the notification when clicking anywhere
-            document.body.addEventListener('click', function () {
-                document.getElementById('notification-box').style.top = '-200%';
-                document.getElementById('overlay').style.display = 'none';
-                localStorage.setItem('notificationShown', 'true');
-            });
-        } else {
-            // Hide the notification box completely after the first time
-            document.getElementById('notification-box').style.display = 'none';
-            document.getElementById('overlay').style.display = 'none';
-        }
     </script>
 
 </body>
