@@ -156,7 +156,7 @@
         }
 
         .sidebar.collapsed {
-            width: 80px;
+            width: 66px;
         }
 
         /* Sidebar Logo */
@@ -167,16 +167,16 @@
         }
 
         .logo-container img {
-            width: 50px;
-            filter: brightness(100%); /* Restore original brightness on hover */
+            width: 60px;
+            filter: brightness(100%);
             height: auto;
-            margin-right: 10px;
+            margin-right: 0px;
             transition: filter 0.3s, transform 0.3s; /* Add transition effect for smoother change */
         }
 
         .logo-container img:hover {
-	        filter: brightness(130%); /* Restore original brightness on hover */
-	        transform: scale(1.1); /* Scale up by 10% on hover */
+	        filter: brightness(130%);
+	        transform: scale(1.1);
         }
 
         .logo-text {
@@ -187,6 +187,7 @@
 
         .sidebar.collapsed .logo-text {
             display: none;
+            margin-right: 10px;
         }
 
         .menu-toggle {
@@ -197,7 +198,7 @@
             cursor: pointer;
             margin-bottom: 20px;
             display: block;
-            border-radius: 15px;
+            border-radius: 5px;
         }
 
         .sidebar ul {
@@ -206,7 +207,7 @@
         }
 
         .sidebar ul li {
-            margin: 10px 0;
+            margin: 5px 0;
         }
 
         .sidebar ul li a {
@@ -223,6 +224,7 @@
 
         .sidebar ul li a:hover {
             background-color: #444;
+            transition: transform 0.3s ease;
         }
 
         .sidebar ul li img {
