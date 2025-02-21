@@ -1,4 +1,47 @@
 const images = [
+    { filename: "pinkbubbles.png", tags: "pink, black, bubbles, wave, montage" },
+    { filename: "pinkglass.png", tags: "pink, warm, tank, montage, beautiful thumbnail" },
+    { filename: "pixel.png", tags: "pixel, blue, white, season points, season xp, grinding, montage" },
+    { filename: "pixels.png", tags: "pixel, rays, blue, white, season points, season xp, grinding, montage" },
+    { filename: "portalbottom1.png", tags: "gold, black, portal, ray, shine, cool, montage, tank" },
+    { filename: "portalbottom2.png", tags: "blue, black, portal, ray, shine, cool, montage, tank" },
+    { filename: "portalbottom3.png", tags: "blue, black, portal, ray, shine, cool, montage, tank" },
+    { filename: "portalbottom4.png", tags: "gold, black, portal, ray, shine, cool, montage, tank" },
+    { filename: "RBRGuide.png", tags: "guide, tutorial, tips and tricks, gold, helpful, explaining" },
+    { filename: "100Hours.png", tags: "red, blue, 100 hours, montage" },
+    { filename: "100Hours2.png", tags: "red, 100 hours, montage" },
+    { filename: "Addict.png", tags: "Blue, Addict, montage" },
+    { filename: "blueglass.png", tags: "Blue, blue glass, montage, simple" },
+    { filename: "blueportalaura.png", tags: "Blue, Portal, aura, montage" },
+    { filename: "crate.png", tags: "crate, grey, gray, opening" },
+    { filename: "crates.png", tags: "crates, grey, gray, gold, opening" },
+    { filename: "cratestanks.png", tags: "crates, colorful, blue, opening, mystery, tanks" },
+    { filename: "crown.png", tags: "crown, gold, blue" },
+    { filename: "crownedtank.png", tags: "crown, gold, tank, blue" },
+    { filename: "elitecrate.png", tags: "gold, crate, opening, elite crate" },
+    { filename: "escape1.png", tags: "escape, montage, tank, red" },
+    { filename: "escape2.png", tags: "escape, montage, tank, blue" },
+    { filename: "escape3.png", tags: "escape, montage, tank, white" },
+    { filename: "escape4.png", tags: "escape, montage, wave, cyan, blue" },
+    { filename: "glassbubble.png", tags: "pink, glass, bubble, tank, montage, black" },
+    { filename: "gold leader.png", tags: "gold, crown, tank, montage, winner" },
+    { filename: "goldrays.png", tags: "gold, black, rays, tank, montage" },
+    { filename: "goldshine.png", tags: "gold, black, shine, tank, montage" },
+    { filename: "goldspotlight.png", tags: "gold, black, shine, ray, spotlight, tank, rocket bot royale" },
+    { filename: "How to design thumbnail.png", tags: "blue, tutorial, how to design thumbnail, how to design free rocket bot royale thumbnail" },
+    { filename: "Islands.png", tags: "Blue, blade, black, Islands, montage" },
+    { filename: "level50.png", tags: "level 50, gold, rocket bot royal level 50" },
+    { filename: "light1.png", tags: "black, cyan, blue, light, spotlight, tank, montage" },
+    { filename: "light2.png", tags: "black, blue, light, spotlight, tank, montage" },
+    { filename: "light3.png", tags: "black, yellow, light, spotlight, tank, montage" },
+    { filename: "light4.png", tags: "black, red, light, spotlight, tank, montage" },
+    { filename: "nostalgialight.png", tags: "nostalgia, white, black, tank, montage" },
+    { filename: "redlightbottom.png", tags: "spotlight, shine, red, black, tank, montage" },
+    { filename: "redspotlight.png", tags: "spotlight, red, blue, black, tank, montage" },
+    { filename: "switch games.png", tags: "Challenge, contest, blue, games, I lose, I switch games" },
+    { filename: "tank.png", tags: "simple, tank, blue, montage" },
+    { filename: "versusthumbnail1.png", tags: "versus, 1v1, fighting, montage, video, red vs blue" },
+    { filename: "whitespotlight.png", tags: "white, spotlight, montage, black, tank, beautiful, rays, shine" },
     { filename: "versusthumbnail11.png", tags: "blue, versus, 1v1, red vs blue, fight" },
     { filename: "GoldCrownedTank.png", tags: "Gold, yellow, crowned, tank, first, montage" },
     { filename: "Royalty.png", tags: "Royalty, montage, music, orange, gold, leader" },
@@ -84,19 +127,20 @@ const images = [
 // Get gallery container
 const gallery = document.getElementById("imageGallery");
 
-// Function to create image elements but defer loading
+// Create image elements (SEO-friendly but minimal)
 function createImageElement(image) {
     const div = document.createElement("div");
     div.className = "image-item";
     div.setAttribute("data-tags", image.tags.toLowerCase());
 
     const img = document.createElement("img");
-    img.dataset.src = `images/${image.filename}`; 
-    img.alt = image.filename;
-    img.classList.add("lazy"); // Add lazy class
+    img.src = `images/${image.filename}`;
+    img.alt = image.tags; // Simple SEO alt text
+    img.title = image.tags; // SEO title
+    img.loading = "lazy"; // Native lazy loading (no extra JS)
 
     img.onerror = function () {
-        this.src = "ui/fallback.png"; // Fallback for missing images
+        this.src = "ui/fallback.png";
     };
 
     const downloadBtn = document.createElement("a");
@@ -110,51 +154,17 @@ function createImageElement(image) {
     return div;
 }
 
-// Function to display all images without loading them
-function displayImages() {
-    images.forEach(image => {
-        gallery.appendChild(createImageElement(image));
-    });
-
-    // Activate lazy loading after adding all images
-    lazyLoadImages();
+// Display images
+function displayImages(imagesToDisplay = images) {
+    gallery.innerHTML = "";
+    imagesToDisplay.forEach(image => gallery.appendChild(createImageElement(image)));
 }
 
-// Lazy Load Function
-function lazyLoadImages() {
-    const lazyImages = document.querySelectorAll("img.lazy");
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src; // Load image when in viewport
-                img.classList.remove("lazy");
-                observer.unobserve(img);
-            }
-        });
-    });
-
-    lazyImages.forEach(img => observer.observe(img));
-}
-
-// Search Function
+// Search function (tags-based)
 function searchImages() {
     let query = document.getElementById("searchInput").value.toLowerCase();
-    gallery.innerHTML = ""; // Clear gallery
     let filteredImages = images.filter(image => image.tags.toLowerCase().includes(query));
-
-    filteredImages.forEach(image => {
-        gallery.appendChild(createImageElement(image));
-    });
-
-    lazyLoadImages(); // Apply lazy loading after search
-}
-
-// Sort by Random
-function sortByRandom() {
-    const shuffledImages = [...images].sort(() => Math.random() - 0.5);
-    displayImages(shuffledImages);
+    displayImages(filteredImages);
 }
 
 // Load all images initially
