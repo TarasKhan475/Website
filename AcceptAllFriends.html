@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Accept All Friend Requests</title>
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;700&display=swap" rel="stylesheet" />
+
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="ui/favicons/apple-touch-icon.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="ui/favicons/favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="ui/favicons/favicon-16x16.png" />
+	<link rel="manifest" href="ui/favicons/site.webmanifest" />
+    <link rel="stylesheet" href="Main.css" />
+
+	<style>
+		body {
+			background-image: url('ui/background_image_light_theme.png');
+			background-repeat: repeat;
+			animation: scrollBackground 10s linear infinite;
+			font-family: 'Baloo 2', cursive;
+			margin: 0;
+			padding: 0;
+		}
+		@keyframes scrollBackground {
+			from { background-position: 0 0; }
+			to { background-position: 100px -100px; }
+		}
+		header.main-header {
+			background-color: #ffffff;
+			color: black;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 20px;
+			border-bottom: 6px solid #c0c0c0;
+		}
+		.logo img {
+			height: 50px;
+			width: auto;
+			filter: brightness(95%);
+		}
+		nav ul {
+			list-style: none;
+			display: flex;
+			margin: 0;
+			padding: 0;
+		}
+		nav ul li {
+			margin-right: 20px;
+		}
+		nav ul li a {
+			text-decoration: none;
+			color: black;
+			font-weight: bold;
+		}
+		nav ul li a:hover {
+			text-decoration: underline;
+		}
+		.content {
+			max-width: 800px;
+			margin: 80px auto;
+			padding: 20px;
+			background-color: #333;
+			color: white;
+			border-radius: 10px;
+			border: 6px solid #222;
+			outline: 6px solid #fff;
+			backdrop-filter: blur(10px);
+		}
+		input, button {
+			margin: 10px 0;
+			padding: 10px;
+			font-size: 16px;
+			width: 100%;
+			box-sizing: border-box;
+			border: none;
+			border-radius: 5px;
+		}
+		input {
+			background-color: #fff;
+			color: #000;
+		}
+		button {
+			background-color: #00a2ff;
+			color: white;
+			cursor: pointer;
+		}
+		button:hover {
+			background-color: #0078bd;
+		}
+		.results p {
+			background-color: #f1f1f1;
+			color: #333;
+			padding: 10px;
+			border-radius: 5px;
+			margin-top: 10px;
+		}
+		.loading {
+			color: yellow;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJW7W69KMT"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-WJW7W69KMT');
+    </script>
+	<!-- Header -->
+	<header class="main-header">
+		<div class="logo">
+			<a href="Index.html"><img src="ui/Buttonlogo.png" alt="WinterpixelCheats" /></a>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="About.html">About</a></li>
+				<li><a href="Services.html">Services</a></li>
+				<li><a href="Contact.html">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Main Tool Box -->
+	<div class="content">
+		<h2>Accept All Friend Requests (Rocket Bot Royale)</h2>
+		<p>This tool accepts all pending friend requests on your Rocket Bot Royale account. Very convenient for people with large amounts of friend requests!</p>
+		<p>You might have to refresh the page or close and reopen Rocket Bot Royale for your friends page to update</p>
+		<form id="acceptForm">
+			<input type="email" id="email" placeholder="Email" required />
+			<input type="password" id="password" placeholder="Password" required />
+			<button type="submit">Accept Friend Requests</button>
+		</form>
+
+		<div class="results" id="results"></div>
+	</div>
+
+	<!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <ul>
+                <li><a href='/privacypolicy'>Privacy Policy</a></li>
+                <li><a href='/about'>About Us</a></li>
+                <li><a href='/contact'>Contact Us</a></li>
+                <li><a href='/othersites'>Other Sites</a></li>
+            </ul>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 WinterpixelCheats.com All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function Loader(active) {
+            if (active) {
+                if (!document.getElementById("overlay")) {
+                    const overlay = document.createElement("div");
+                    overlay.id = "overlay";
+                    overlay.style.position = "fixed";
+                    overlay.style.top = "0";
+                    overlay.style.left = "0";
+                    overlay.style.width = "100%";
+                    overlay.style.height = "100%";
+                    overlay.style.backgroundColor = "rgba(0, 0, 0, 0.6)";
+                    overlay.style.zIndex = "9999";
+
+                    const notificationBox = document.createElement("div");
+                    notificationBox.id = "notification-box";
+                    notificationBox.style.position = "fixed";
+                    notificationBox.style.top = "10%";
+                    notificationBox.style.left = "50%";
+                    notificationBox.style.transform = "translateX(-50%)";
+                    notificationBox.style.padding = "20px";
+                    notificationBox.style.background = "#fff";
+                    notificationBox.style.color = "#000";
+                    notificationBox.style.borderRadius = "10px";
+                    notificationBox.style.fontWeight = "bold";
+                    notificationBox.innerText = "Please wait...";
+
+                    document.body.appendChild(overlay);
+                    document.body.appendChild(notificationBox);
+                }
+            } else {
+                const overlay = document.getElementById("overlay");
+                const notificationBox = document.getElementById("notification-box");
+                if (overlay) overlay.remove();
+                if (notificationBox) notificationBox.remove();
+            }
+        }
+
+        document.getElementById("acceptForm").addEventListener("submit", async function (e) {
+            e.preventDefault();
+            Loader(true);
+
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const resultsDiv = document.getElementById("results");
+            resultsDiv.innerHTML = '<p class="loading">⏳ Processing... Please wait.</p>';
+
+            try {
+                const response = await fetch("/.netlify/functions/acceptfriends", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ email, password }),
+                });
+
+                const data = await response.json();
+                resultsDiv.innerHTML = "";
+
+                const result = document.createElement("p");
+
+                if (response.ok && data.success) {
+                    result.textContent = `✅ Accepted ${data.accepted} friend request(s)!`;
+                } else {
+                    result.textContent = `⚠️ Error: ${data.error || 'Unknown error'}`;
+                }
+
+                resultsDiv.appendChild(result);
+
+                if (Array.isArray(data.details)) {
+                    data.details.forEach((msg) => {
+                        const p = document.createElement("p");
+                        p.textContent = msg;
+                        resultsDiv.appendChild(p);
+                    });
+                }
+            } catch (err) {
+                resultsDiv.innerHTML = "";
+                const result = document.createElement("p");
+                result.textContent = `❌ Failed: ${err.message}`;
+                resultsDiv.appendChild(result);
+            }
+            Loader(false);
+        });
+    </script>
+</body>
+</html>
